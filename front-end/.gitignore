@@ -1,5 +1,3 @@
+*.tsx
+**/*.tsx
 node_modules/
-server/**/*
-server/**
-server/*
-!server/index.html
