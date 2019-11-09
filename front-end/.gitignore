@@ -1,0 +1,3 @@
+*.tsx
+**/*.tsx
+node_modules/
