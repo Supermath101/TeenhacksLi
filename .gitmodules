@@ -1,0 +1,4 @@
+[submodule "Web"]
+	path = TeenhacksLi
+	url = https://github.com/KarlWithK/TeenhacksLi.git
+	branch = master
