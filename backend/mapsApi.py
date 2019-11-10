@@ -14,6 +14,19 @@ def getLat_Lng(address):
         lng = 0
     return lat, lng
 
+def getPlaceID(address):
+    url = ('https://maps.googleapis.com/maps/api/geocode/json?address={}&key={}'.format(address.replace(' ','+'), apiKey))
+    try:
+        response = requests.get(url)
+        pythonConvert = response.json()
+        placeID = pythonConvert['results'][0]["place_id"]
+    except:
+        placeID = ""
+    return placeID
+
+
+address = "55 church Ave, brooklyn"
+print(getPlaceID(address))
 
 def formal(lat, lng):
     url = ('https://maps.googleapis.com/maps/api/geocode/json?latlng={},{}&key={}'.format(lat, lng, apiKey))
