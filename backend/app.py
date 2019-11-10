@@ -5,11 +5,12 @@ import json
 app = Flask(__name__)
 
 
-
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["POST", "GET"])
 def main():
-    address = json.loads(request.data)
-    address = address['address']
+    address = request.get_data().decode()
+    print(address)
+    # address = json.loads(request.data)
+    # address = address['address']
     location = {'lat': mapsApi.getLat_Lng(address)[0]}, {'lng': mapsApi.getLat_Lng(address)[1]}
     resp = Response(json.dumps(location))
     resp.headers['Access-Control-Allow-Origin'] = '*'
