@@ -25,9 +25,6 @@ def getPlaceID(address):
     return placeID
 
 
-address = "55 church Ave, brooklyn"
-print(getPlaceID(address))
-
 def formal(lat, lng):
     url = ('https://maps.googleapis.com/maps/api/geocode/json?latlng={},{}&key={}'.format(lat, lng, apiKey))
     try:
