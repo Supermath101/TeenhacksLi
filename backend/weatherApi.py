@@ -63,19 +63,9 @@ def forecast():
     roundhumidity=round(float(humidityavg), 1)
     return roundcelsius, roundfahren, roundhumidity
 
-def humidcomments(x):
-    if x > 80:
-        return "Darn, you are in for a tough time! The humidity is so high, Elon Musk is getting jealous."
-    elif x < 25:
-        return "You better bring a jacket! Somebody's gotta get a humidifier in here."
-    elif x > 60 and x <= 80:
-        return "You will cook like a lobster - that is, a lobster in a slow-cooker."
-    elif x >= 25 and x <=60:
-        return "The humidity is tolerable. Just like a A- on that latest math test."
 def main():
     init()
-    
-    humidcomments(forecast()[2])
+    forecast()
 main()
 
 
